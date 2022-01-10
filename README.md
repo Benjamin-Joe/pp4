@@ -35,12 +35,37 @@ Because the website is only about Fallout I think that it will prevent toxic/dan
 <a name="installations"></a>
 # Installations
 In order to complete this website. Several installations were needed, they are all listed below along with a link to a website for each item installed:  
+[Django-3.2](https://docs.djangoproject.com/en/4.0/releases/3.2/)  
+[Gunicorn](https://gunicorn.org/)  
+[Dj_Database_url](https://pypi.org/project/dj-database-url/)  
+[Psycopg2](https://pypi.org/project/psycopg2/)  
+[Cloudinary-Storage-Django](https://pypi.org/project/django-cloudinary-storage/)  
+
+
 
 
 <a name="deployment"></a>
 # Deployment
 Early deployent was key to creating a successful website as it removed any stress of last minute deployment issues. 
 In order to deploy this website I followed the django blog cheat sheet provided by Code Institute, The steps are as follows:  
+Install django, gunicorn, dj_database_url, psycopg2, cloudinary-storage in the terminal.  
+Create a requirements.txt file with 
+```bash
+pip3 freeze --local > requirements.txt
+```  
+Start a project using 
+```bash
+django-admin startproject falloutinator .
+```  
+Create an app using 
+```bash
+pip3 manage.py startapp blog
+```  
+Add the blog app to the installed apps section in the settings file within the falloutinator project  
+Then migrate the changes using  
+```bash
+python3 manage.py migrate
+```  
 
 
 <a name="admin"></a>
