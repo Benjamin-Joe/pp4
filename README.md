@@ -69,6 +69,15 @@ python3 manage.py migrate
 After that it was time to create the Heroku app on the Heroku website and connect it up to github below are the Heroku dev center website pages on how to deploy on Heroku, there are two methods of doing this, the first one is from Heroku itself and the second one is using the git bash terminal. I chose the first method as I found it easier to do  
 [Heroku-Dev-Center-Method-1](https://devcenter.heroku.com/articles/github-integration)  
 [Heroku-Dev-Center-Method-2](https://devcenter.heroku.com/articles/git)  
+I used cloudinary to store images for this website (to prevent images being deleted without permission to do so). Connecting this up to the project was very easy and only took a couple of steps:  
+Login to cloudinary account  
+copy API Environment Variable from dashboard  
+Paste it into env.py file and also into the config vars setting on Heroku app  
+Add cloudinary storage to settings.py  
+
+Once cloudinary was installed it was just a case of creating the media, static and templates folders and adding them to settings.py  
+Then create a Procfile and add the project name to the procfile. Then it was time for deployment.
+
 
 
 
