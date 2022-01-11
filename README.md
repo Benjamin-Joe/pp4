@@ -1,7 +1,7 @@
-# Falloutinator  
+# [Falloutinator](https://falloutinator.herokuapp.com/)  
 
 ## What is Falloutinator
-Falloutinator is a website where Fallout fans can gather and share their experiences, opinions and even some tips and tricks they have learnt along the way. The aim of this website is to create a small community of hardcore fans and allos them to share their thoughts in blog form. There is also a Fallout news page with all the latest websites and news related to Fallout. To those who don't know, Fallout is a very popular gaming franchise owned by Bethesda Softworks. They have created multiple fallout games and with any luck they will create more in the future!
+Falloutinator is a website where Fallout fans can gather and share their experiences, opinions and even some tips and tricks they have learnt along the way. The aim of this website is to create a small community of hardcore fans and allows them to share their thoughts in blog form. There is also a Fallout news page with all the latest websites and news related to Fallout. To those who don't know, Fallout is a very popular gaming franchise owned by Bethesda Softworks. They have created multiple fallout games and with any luck they will create more in the future!
 
 ## Keys  
 1. [ Introduction ](#introduction)
@@ -99,6 +99,9 @@ Then create a Procfile and add the project name to the procfile. Then it was tim
 
 <a name="help"></a>
 # Help
+Creating this website required a lot of help and a fair amount of external websites were used to guide me on my way. Each one is pointed out below, and any code taken directly from anywhere will be acknowledged above the code itself:  
+[Django-Central](https://djangocentral.com/building-a-blog-application-with-django/)  
+
 
 <a name="bugs"></a>
 # Bugs
