@@ -66,6 +66,11 @@ Then migrate the changes using
 ```bash
 python3 manage.py migrate
 ```  
+After that it was time to create the Heroku app on the Heroku website and connect it up to github below are the Heroku dev center website pages on how to deploy on Heroku, there are two methods of doing this, the first one is from Heroku itself and the second one is using the git bash terminal. I chose the first method as I found it easier to do  
+[Heroku-Dev-Center-Method-1](https://devcenter.heroku.com/articles/github-integration)  
+[Heroku-Dev-Center-Method-2](https://devcenter.heroku.com/articles/git)  
+
+
 
 
 <a name="admin"></a>
