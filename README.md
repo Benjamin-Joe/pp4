@@ -35,6 +35,8 @@ In order to complete this website. Several installations were needed, they are a
 [Dj_Database_url](https://pypi.org/project/dj-database-url/)  
 [Psycopg2](https://pypi.org/project/psycopg2/)  
 [Cloudinary-Storage-Django](https://pypi.org/project/django-cloudinary-storage/)  
+[Django-Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)  
+
 
 <a name="deployment"></a>
 # Deployment
