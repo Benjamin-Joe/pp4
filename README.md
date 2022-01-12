@@ -5,16 +5,15 @@ Falloutinator is a website where Fallout fans can gather and share their experie
 
 ## Keys  
 1. [ Introduction ](#introduction)
-2. [ Setup ](#setup)
-3. [ Installations ](#installations)
-4. [ Deployment ](#deployment)
-5. [ Admin ](#admin)
-6. [ Models ](#models)
-7. [ Styles ](#styles)
-8. [ Build ](#build)
-9. [Testing ](#testing)
-10. [ Help ](#help)
-11. [ Bugs ](#bugs)
+2. [ Installations ](#installations)
+3. [ Deployment ](#deployment)
+4. [ Admin ](#admin)
+5. [ Models ](#models)
+6. [ Styles ](#styles)
+7. [ Build ](#build)
+8. [Testing ](#testing)
+9. [ Help ](#help)
+10. [ Bugs ](#bugs)
 
 <a name="introduction"></a>
 # Introduction
@@ -28,10 +27,6 @@ The website has many other features that can be added over time, increasing it's
 The client base I am looking at for this website is a fairly small number of users. A few hundred or so users, But these users will be pasionate Fallout fans. My hope is to create a close and caring community with a common interest.  
 Because the website is only about Fallout I think that it will prevent toxic/dangerous users from posting harmful content as only true Fallout fans are going to be interested in signing up for an account.
 
-
-<a name="setup"></a>
-# Setup
-
 <a name="installations"></a>
 # Installations
 In order to complete this website. Several installations were needed, they are all listed below along with a link to a website for each item installed:  
@@ -40,9 +35,6 @@ In order to complete this website. Several installations were needed, they are a
 [Dj_Database_url](https://pypi.org/project/dj-database-url/)  
 [Psycopg2](https://pypi.org/project/psycopg2/)  
 [Cloudinary-Storage-Django](https://pypi.org/project/django-cloudinary-storage/)  
-
-
-
 
 <a name="deployment"></a>
 # Deployment
@@ -78,10 +70,6 @@ Add cloudinary storage to settings.py
 Once cloudinary was installed it was just a case of creating the media, static and templates folders and adding them to settings.py  
 Then create a Procfile and add the project name to the procfile. Then it was time for deployment.
 
-
-
-
-
 <a name="admin"></a>
 # Admin
 
@@ -101,7 +89,6 @@ Then create a Procfile and add the project name to the procfile. Then it was tim
 # Help
 Creating this website required a lot of help and a fair amount of external websites were used to guide me on my way. Each one is pointed out below, and any code taken directly from anywhere will be acknowledged above the code itself:  
 [Django-Central](https://djangocentral.com/building-a-blog-application-with-django/)  
-
 
 <a name="bugs"></a>
 # Bugs
