@@ -1,7 +1,7 @@
 # [Falloutinator](https://falloutinator.herokuapp.com/)  
 
 ## What is Falloutinator
-Falloutinator is a website where Fallout fans can gather and share their experiences, opinions and even some tips and tricks they have learnt along the way. The aim of this website is to create a small community of hardcore fans and allows them to share their thoughts in blog form. There is also a Fallout news page with all the latest websites and news related to Fallout. To those who don't know, Fallout is a very popular gaming franchise owned by Bethesda Softworks. They have created multiple fallout games and with any luck they will create more in the future!
+Falloutinator is a website where Fallout fans can gather and share their experiences, opinions and even some tips and tricks they have learnt along the way. The aim of this website is to create a small community of hardcore fans and allow them to share their thoughts in blog form. There is also a Fallout news page with all the latest websites and news related to Fallout. To those who don't know, Fallout is a very popular gaming franchise owned by Bethesda Softworks. They have created multiple fallout games and with any luck they will create more in the future!
 
 ## Keys  
 1. [ Introduction ](#introduction)
@@ -75,6 +75,16 @@ Then create a Procfile and add the project name to the procfile. Then it was tim
 
 <a name="models"></a>
 # Models
+This site required three models:  
+Comment - Enables users to comment on other user's posts  
+Post - Enables users to write posts and allows others to view them  
+Categories - Gives users the ability to allocate a post to a category making it easier for other users to find.  
+The Post model was created by following Django Central blog website (link in help section). I also added an image field using Cloudinary and a like field. I feel that both of these give users a better experience as they can interact and share with eachother easier.  
+The Comment model will prove very useful as it allows users to share opinions and get feedback themselves from other users. By having this feature it creates a sense of community.  
+Having a Categories section was a must for this website as it brings a lot to the table. By allowing users to create posts under a specific category it makes it easier for other users to find the posts that they are interested in.  
+
+
+
 
 <a name="styles"></a>
 # Styles
