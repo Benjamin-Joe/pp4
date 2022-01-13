@@ -5,3 +5,42 @@
     box-sizing: border-box;
 }
 
+/* Navigation bar ------------------ */
+
+.navbar-brand {
+    transition: transform .3s;
+    font-weight: bold;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.1);
+    font-weight: bold;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    font-weight: bold;
+    color: white;
+    margin-left: 3px;
+}
+
+.search-bar-btn {
+    font-weight: bold;
+    color: white;
+    background-color: rgb(146, 166, 194);
+    border: 1px solid black;
+}
+
+/* Footer bar ------------------ */
+
+#foot-text {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.3s;
+    text-decoration: none;
+}
+
+#foot-text:hover {
+    transform: scale(1.1);
+    text-decoration: none;
+}

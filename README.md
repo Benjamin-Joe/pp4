@@ -85,9 +85,10 @@ The Post model was created by following Django Central blog website (link in hel
 The Comment model will prove very useful as it allows users to share opinions and get feedback themselves from other users. By having this feature it creates a sense of community.  
 Having a Categories section was a must for this website as it brings a lot to the table. By allowing users to create posts under a specific category it makes it easier for other users to find the posts that they are interested in.  
 
-
 <a name="styles"></a>
 # Styles
+For the style of this project I followed a similar style to Facebook, I like the simple but bold styling. By keeping it consistant and simple throughout the site I believe it improves UI and allows users to focus on the content of the website without getting lost navigating their way around.  
+The color scheme overall is a blue and white theme.
 
 <a name="build"></a>
 # Build
