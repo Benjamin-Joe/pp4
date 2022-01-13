@@ -13,6 +13,11 @@ STATUS = (
 
 class Post(models.Model):
     "Model for creating blog posts"
+
+    class PostManager(models.Manager):
+        def get_queryset(self):
+            return super().get_queryset().filter(status=1)
+
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
@@ -22,6 +27,9 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     post_image = CloudinaryField('image', default='placeholder')
     likes = models.ManyToManyField(User, related_name='user_likes', blank=True)
+    objects = models.Manager()
+    postmanager = PostManager()
+
 
     class Meta:
         "Class to display posts via date created"

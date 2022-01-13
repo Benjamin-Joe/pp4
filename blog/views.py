@@ -5,5 +5,6 @@ from .models import Post
 
 def homepage(request):
     "View for the homepage"
-    posts = Post.objects.all()
+    posts = Post.postmanager.all()
+
     return render(request, 'index.html', {'posts': posts})
