@@ -86,8 +86,6 @@ The Comment model will prove very useful as it allows users to share opinions an
 Having a Categories section was a must for this website as it brings a lot to the table. By allowing users to create posts under a specific category it makes it easier for other users to find the posts that they are interested in.  
 
 
-
-
 <a name="styles"></a>
 # Styles
 
@@ -104,4 +102,5 @@ Creating this website required a lot of help and a fair amount of external websi
 
 <a name="bugs"></a>
 # Bugs
-
+I encountered a few issues along the way, the issues are all noted below along with how I went about fixing the issue:  
+There was a commit issue. Commit number 11 has the wrong message attatched to it. I did try to research how to change the commit message but I was not successful, the messages states "Delete current migrations and remigrate models due to unknown error" The message was supposed to state "Coppied allauth files into templates folder. Remigrate models due to error"  
