@@ -4,7 +4,12 @@
 {% block content %}
         <div class="container">
                 <div class="row justify-content-md-center">
-
+                    {% for post in posts %}
+                    {{ post.title }}
+                    {{ post.author }}
+                    {{ post.created_on }}
+                    {{ post.content|slice:200 }}
+                    {% endfor %}
                 </div>
         </div>
 {% endblock %}
