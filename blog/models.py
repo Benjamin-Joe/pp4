@@ -2,6 +2,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
 
 # Post model directly from Django Central
 
@@ -30,6 +31,8 @@ class Post(models.Model):
     objects = models.Manager()
     postmanager = PostManager()
 
+    def get_absolute_url(self):
+        return reverse('BLOG:post_detail', args=[self.slug])
 
     class Meta:
         "Class to display posts via date created"
