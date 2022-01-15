@@ -1,8 +1,8 @@
 "Models page for blog"
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-from django.urls import reverse
 
 # Post model directly from Django Central
 
@@ -16,7 +16,9 @@ class Post(models.Model):
     "Model for creating blog posts"
 
     class PostManager(models.Manager):
+        "Class for filtering posts that are published"
         def get_queryset(self):
+            "Class for filtering posts that are published"
             return super().get_queryset().filter(status=1)
 
     title = models.CharField(max_length=200, unique=True)
@@ -32,6 +34,7 @@ class Post(models.Model):
     postmanager = PostManager()
 
     def get_absolute_url(self):
+        "Class to return the post_detail url based on the slug name"
         return reverse('BLOG:post_detail', args=[self.slug])
 
     class Meta:
@@ -54,7 +57,7 @@ class Comment(models.Model):
     email = models.EmailField()
     created_on = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
-    active = models.BooleanField(default=False)
+    active = models.BooleanField(default=True)
 
     class Meta:
         "Class for displaying messages oldest first"
