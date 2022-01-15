@@ -12,6 +12,15 @@ STATUS = (
 )
 
 
+class Category(models.Model):
+    "Class for blog categories"
+    name = models.CharField(max_length=50, unique=True)
+
+    def __str__(self):
+        "Class to return name of category in admin seciton"
+        return self.name
+
+
 class Post(models.Model):
     "Model for creating blog posts"
 
@@ -24,6 +33,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
