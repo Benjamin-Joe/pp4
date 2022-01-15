@@ -11,5 +11,23 @@
 <h2 class="btn btn-primary">Back</h2>
 </a>
 
+<div class="col-md-12">
+    {% with comments.count as total_comments %}
+    <h1>{{ total_comments }}Comment(s)</h1>
+    {% endwith %}
+    {% for comment in comments %}
+    Comment {{ forloop.counter }} By {{ comment.name }} 
+    {{ comment.content }}
+    {% empty %}
+    <p>No Comments Yet</p>
+    {% endfor %}
+    <h1>Add A Comment</h1>
+    <form id="comment_form" method="post">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <button type="submit" class="btn btn-primary btn-block">Post Comment</button>
+    </form>
+</div>
+
 
 {% endblock %}
