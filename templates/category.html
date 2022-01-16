@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+<title>Falloutinator | {% block title %}Categories{% endblock %}</title>
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12"></div>
+            <h1>
+            {{ categorylist.cat }}
+            </h1>
+            {% for post in categorylist.posts %}
+            <div class="col-md-4">
+                <a href="{{ post.get_absolute_url }}">
+                    <div class="card">
+                        <h2>{{ post.title }}</h2>
+                    
+                    </div>
+                    <p>
+                    {{ post.content|slice:200 }}
+                    </p>
+
+                </a>
+            </div>
+            {% endfor %}
+
+    </div>
+</div>
+{% endblock %}
