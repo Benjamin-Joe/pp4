@@ -99,8 +99,9 @@ The color scheme overall is a blue and white theme.
 <a name="help"></a>
 # Help
 Creating this website required a lot of help and a fair amount of external websites were used to guide me on my way. Each one is pointed out below, and any code taken directly from anywhere will be acknowledged above the code itself:  
-[Django-Central](https://djangocentral.com/building-a-blog-application-with-django/)  
-
+[Django-Central](https://djangocentral.com/building-a-blog-application-with-django/)
+[Freepik](www.freepik.com)  
+Placeholder photo created by user6702303
 <a name="bugs"></a>
 # Bugs
 I encountered a few issues along the way, the issues are all noted below along with how I went about fixing the issue:  
