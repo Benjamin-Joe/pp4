@@ -1,7 +1,7 @@
 "Main views.py file"
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.views.generic import ListView
-from .models import Post
+from .models import Post, Comment, Category
 from .forms import CommentForm
 
 
@@ -39,3 +39,12 @@ class CategoryView(ListView):
             'posts': Post.objects.filter(category__name=self.kwargs['category']).filter(status=1)
         }
         return content
+
+
+def categorydropdown(request):
+    "Function to call all categories"
+    categorydropdown = Category.objects.all()
+    context = {
+        'categorydropdown': categorydropdown,
+    }
+    return context
