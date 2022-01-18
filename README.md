@@ -102,6 +102,8 @@ Creating this website required a lot of help and a fair amount of external websi
 [Django-Central](https://djangocentral.com/building-a-blog-application-with-django/)
 [Freepik](www.freepik.com)  
 Placeholder photo created by user6702303
+
+https://wallpaperaccess.com/vault-tec#google_vignette
 <a name="bugs"></a>
 # Bugs
 I encountered a few issues along the way, the issues are all noted below along with how I went about fixing the issue:  

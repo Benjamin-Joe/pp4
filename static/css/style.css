@@ -3,7 +3,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
+
+/* Font stylings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
+
+
 
 /* Navigation bar ------------------ */
 
@@ -55,7 +70,7 @@
 }
 
 .index-card:hover {
-    box-shadow: 0 9px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 9px 26px 0 rgba(0,0,0,0.2);
 }
 
 .index-content {
@@ -69,4 +84,29 @@
 
 .index-info {
     font-weight: bold;
+}
+
+.view-btn {
+    width: 80%;
+}
+
+.view-btn:hover {
+    font-weight: bold;
+}
+
+
+/*Category stylings*/
+
+.category-home {
+    width: 100%;
+}
+
+.no-category {
+    margin: auto;
+}
+
+.no-category-image {
+    width: 60%;
+    margin: auto;
+    padding-top: 25px;
 }
