@@ -56,13 +56,12 @@ h6 {
     text-align: center;
     color: white;
     font-weight: bold;
-    transition: transform 0.3s;
+
     text-decoration: none;
 }
 
 #foot-text:hover {
-    transform: scale(1.1);
-    text-decoration: none;
+    color: rgb(213, 220, 248);
 }
 
 
@@ -100,8 +99,6 @@ h6 {
 }
 
 
-
-
 /*Category stylings*/
 
 .category-home {
@@ -116,4 +113,16 @@ h6 {
     width: 60%;
     margin: auto;
     padding-top: 25px;
+}
+
+/* Search_bar.html Stylings */
+
+.search-count {
+    width: 100%;
+    text-align: center;
+}
+
+.result-count {
+    text-align: center;
+    width: 100%;
 }

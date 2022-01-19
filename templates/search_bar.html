@@ -1,24 +1,34 @@
 {% extends "base.html" %}
-<title>Falloutinator | {% block title %}Search{% endblock %}</title>
+<title>Falloutinator | {% block title %}{{ q }}{% endblock %}</title>
 
 {% block content %}
-{% if q %}
 
-<h1>Blog Posts Containing "{{ q }}"</h1>
-<p>
-    {% with results.count as total_results %}
-    We Found {{ total_results }} Object(s)
-    {% endwith %}
-</p>
-{% for post in results %}
-<a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-{% empty %}
-<h2>No Matching Posts</h2>
-{% endfor %}
+<div class="container">
+    <div class="row">
+        {% if q %}
+        <h3 class="search-count">Blog Posts Containing "{{ q }}"</h3>
+        {% with results.count as total_results %}
+        <h4 class="result-count">
+            We Found {{ total_results }} Object(s)
+        </h4>
+        {% endwith %}
+            {% for post in results %}
+                <div class="col-lg-4 index-card">
+                  {% if "placeholder" in post.post_image.url %}
+                  <img class="rounded-circle index-img" src="https://res.cloudinary.com/benaldo66/image/upload/v1642449307/placeholder_wkghvj.jpg" alt="" width="140" height="140">
+                  {% else %}
+                  <img class="rounded-circle index-img" src="{{ post.post_image.url }}" alt="" width="140" height="140">
+                  {% endif %}
+
+                  <h2>{{ post.title|title }}</h2>
+                  <p class="index-content">{{ post.content|slice:150 }}...</p>
+                  <p><small class="index-info">Written By: {{ post.author }} <br>
+                  {{ post.created_on }} <br> {{ post.category }}</small></p>
+                  <p><a class="btn btn-primary view-btn" href="{{ post.get_absolute_url }}" role="button">View Post</a></p>
+                </div>
+                {% empty %}
+                
+                <h2>No Matching Posts</h2>
+            {% endfor %}
 {% endif %}
-<form method="get">
-    {{ form.as_p }}
-    <input type="submit" value="Search" class="btn btn-primary">
-</form>
-
 {% endblock %}

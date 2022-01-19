@@ -2,6 +2,7 @@
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.views.generic import ListView
 from .models import Post, Comment, Category
+from django.db.models import Q
 from .forms import CommentForm, SearchForm
 
 
@@ -55,10 +56,14 @@ def search(request):
     form = SearchForm()
     q = ''
     results = []
+    query = Q()
 
     if 'q' in request.GET:
         form = SearchForm(request.GET)
         if form.is_valid():
             q = form.cleaned_data['q']
-            results = Post.objects.filter(title__contains=q)
+
+            if q is not None:
+                query &= Q(title__contains=q)
+            results = Post.objects.filter(query)
     return render(request, 'search_bar.html', {'form': form, 'q': q, 'results' : results})
