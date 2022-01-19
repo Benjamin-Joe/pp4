@@ -2,9 +2,23 @@
 <title>Falloutinator | {% block title %}Search{% endblock %}</title>
 
 {% block content %}
+{% if q %}
 
+<h1>Blog Posts Containing "{{ q }}"</h1>
+<p>
+    {% with results.count as total_results %}
+    We Found {{ total_results }} Object(s)
+    {% endwith %}
+</p>
+{% for post in results %}
+<a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+{% empty %}
+<h2>No Matching Posts</h2>
+{% endfor %}
+{% endif %}
 <form method="get">
     {{ form.as_p }}
+    <input type="submit" value="Search" class="btn btn-primary">
 </form>
 
 {% endblock %}

@@ -54,4 +54,11 @@ def search(request):
     "View for searching for posts"
     form = SearchForm()
     q = ''
-    return render(request, 'search_bar.html', {'form': form,})
+    results = []
+
+    if 'q' in request.GET:
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            q = form.cleaned_data['q']
+            results = Post.objects.filter(title__contains=q)
+    return render(request, 'search_bar.html', {'form': form, 'q': q, 'results' : results})
