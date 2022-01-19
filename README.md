@@ -103,6 +103,8 @@ Creating this website required a lot of help and a fair amount of external websi
 [Freepik](www.freepik.com)  
 Placeholder photo created by user6702303
 
+Photo by Scott Webb from Pexels
+
 https://wallpaperaccess.com/vault-tec#google_vignette
 <a name="bugs"></a>
 # Bugs
