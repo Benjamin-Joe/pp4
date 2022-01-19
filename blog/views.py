@@ -2,7 +2,7 @@
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.views.generic import ListView
 from .models import Post, Comment, Category
-from .forms import CommentForm
+from .forms import CommentForm, SearchForm
 
 
 def homepage(request):
@@ -48,3 +48,10 @@ def categorydropdown(request):
         'categorydropdown': categorydropdown,
     }
     return context
+
+
+def search(request):
+    "View for searching for posts"
+    form = SearchForm()
+    q = ''
+    return render(request, 'search_bar.html', {'form': form,})

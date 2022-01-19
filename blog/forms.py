@@ -2,6 +2,11 @@ from django import forms
 from .models import Comment
 
 
+class SearchForm(forms.Form):
+    "Form for searching for posts"
+    q = forms.CharField()
+
+
 class CommentForm(forms.ModelForm):
     "Form for commenting on posts"
     class Meta:
