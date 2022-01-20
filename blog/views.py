@@ -1,6 +1,6 @@
 "Main views.py file"
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
 from .models import Post, Comment, Category
 from django.db.models import Q
 from .forms import CommentForm, SearchForm
@@ -67,3 +67,9 @@ def search(request):
                 query &= Q(title__contains=q)
             results = Post.objects.filter(query)
     return render(request, 'search_bar.html', {'form': form, 'q': q, 'results' : results})
+
+
+class CreatePost(CreateView):
+    model = Post
+    template_name = 'create_post.html'
+    fields = '__all__'
