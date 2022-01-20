@@ -95,6 +95,8 @@ The color scheme overall is a blue and white theme.
 
 <a name="testing"></a>
 # Testing
+Testing was a critical part of this project. I used a variety of different methods and means, they are all shown below in detail:  
+Chrome DevTools was used constantly as it allowed me to find bugs and errors without having to go through code line by line. I had the DevTools open everytime I ran port 8000 as it made it very easy and quick to problem solve. The best feature in DevTools was the lighthouse test. It allowed me to see problem areas on the site as it was in production and increase the website's efficiency by pointing me in the direction of bad practices or loading speed issues.
 
 <a name="help"></a>
 # Help
@@ -102,7 +104,7 @@ Creating this website required a lot of help and a fair amount of external websi
 [Django-Central](https://djangocentral.com/building-a-blog-application-with-django/)
 [Freepik](www.freepik.com)  
 Placeholder photo created by user6702303
-
+[Tiny.png]
 Photo by Scott Webb from Pexels
 
 https://wallpaperaccess.com/vault-tec#google_vignette

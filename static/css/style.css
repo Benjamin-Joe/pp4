@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url(https://res.cloudinary.com/benaldo66/image/upload/v1642529091/textute-1_tzztyi.jpg);
+    background-image: url(https://res.cloudinary.com/benaldo66/image/upload/v1642636492/textute-1_icr4gx.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -71,7 +71,7 @@ h6 {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     text-align: center;
-    background-color: rgba(201, 209, 202, 0.7)}
+    background-color: rgba(201, 209, 202, 0.8)}
 
 .index-card:hover {
     box-shadow: 9px 9px 9px 9px rgba(48, 36, 119, 0.8);
