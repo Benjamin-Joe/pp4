@@ -5,6 +5,7 @@ from .models import Comment, Post
 class PostForm(forms.ModelForm):
     "Form for creating blog posts"
     class Meta:
+        "Meta class for PostForm"
         model = Post
         fields = ('title', 'slug', 'author', 'category', 'content', 'post_image', 'status')
         widgets = {

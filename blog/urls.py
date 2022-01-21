@@ -9,5 +9,6 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     path('create/', views.CreatePost.as_view(), name='CreatePost'),
     path('<slug:post>/', views.post_detail, name='post_detail'),
+    path('update/<slug>/', views.EditPost.as_view(), name='EditPost'),
     path('category/<category>/', views.CategoryView.as_view(), name='category'),
 ]

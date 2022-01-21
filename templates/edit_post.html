@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+<title>Falloutinator | {% block title %}Edit Blog Post{% endblock %}</title>
+
+{% block content %}
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Update</button>
+    </form>
+</div>
+
+{% endblock %}

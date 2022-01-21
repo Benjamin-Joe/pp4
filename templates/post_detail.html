@@ -3,10 +3,6 @@
 
 {% block content %}
 
-{{ post.title }}
-{{ post.author }}
-{{post.created_on }}<br>
-{{ post.content }}
 <a href="/">
 <h2 class="btn btn-primary">Back</h2>
 </a>
@@ -27,7 +23,8 @@
         {{ comment_form.as_p }}
         <button type="submit" class="btn btn-primary btn-block">Post Comment</button>
     </form>
-</div>
+    <p><a class="btn btn-primary view-btn" href="{% url 'BLOG:EditPost' post.slug %}" role="button">Edit Post</a></p>
 
+</div>
 
 {% endblock %}

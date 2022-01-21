@@ -1,6 +1,6 @@
 "Main views.py file"
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 from .models import Post, Comment, Category
 from django.db.models import Q
 from .forms import CommentForm, SearchForm, PostForm
@@ -43,10 +43,17 @@ class CategoryView(ListView):
 
 
 class CreatePost(CreateView):
+    "View for creating a post via a post form"
     model = Post
     form_class = PostForm
     template_name = 'create_post.html'
 
+
+class EditPost(UpdateView):
+    "Class for updating blog posts"
+    model = Post
+    template_name = 'edit_post.html'
+    fields = ['title', 'category', 'content']
 
 
 def categorydropdown(request):
@@ -73,5 +80,4 @@ def search(request):
             if q is not None:
                 query &= Q(title__contains=q)
             results = Post.objects.filter(query)
-    return render(request, 'search_bar.html', {'form': form, 'q': q, 'results' : results})
-
+    return render(request, 'search_bar.html', {'form': form, 'q': q, 'results': results})
