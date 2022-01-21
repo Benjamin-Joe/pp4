@@ -1,6 +1,6 @@
 "Main views.py file"
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import Post, Comment, Category
 from django.db.models import Q
 from .forms import CommentForm, SearchForm, PostForm
@@ -47,6 +47,13 @@ class CreatePost(CreateView):
     model = Post
     form_class = PostForm
     template_name = 'create_post.html'
+
+
+class DeletePost(DeleteView):
+    "View for deleting a blog post"
+    model = Post
+    template_name = 'delete_post.html'
+    success_url = ('/')
 
 
 class EditPost(UpdateView):

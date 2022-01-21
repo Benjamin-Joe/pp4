@@ -6,6 +6,7 @@
 <a href="/">
 <h2 class="btn btn-primary">Back</h2>
 </a>
+{{ post.content }}
 
 <div class="col-md-12">
     {% with comments.count as total_comments %}
@@ -24,6 +25,7 @@
         <button type="submit" class="btn btn-primary btn-block">Post Comment</button>
     </form>
     <p><a class="btn btn-primary view-btn" href="{% url 'BLOG:EditPost' post.slug %}" role="button">Edit Post</a></p>
+    <p><a class="btn btn-primary view-btn" href="{% url 'BLOG:DeletePost' post.slug %}" role="button">Delete Post</a></p>
 
 </div>
 
