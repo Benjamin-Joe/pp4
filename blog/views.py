@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.views.generic import ListView, CreateView
 from .models import Post, Comment, Category
 from django.db.models import Q
-from .forms import CommentForm, SearchForm
+from .forms import CommentForm, SearchForm, PostForm
 
 
 def homepage(request):
@@ -42,6 +42,13 @@ class CategoryView(ListView):
         return content
 
 
+class CreatePost(CreateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'create_post.html'
+
+
+
 def categorydropdown(request):
     "Function to call all categories"
     categorydropdown = Category.objects.all()
@@ -68,8 +75,3 @@ def search(request):
             results = Post.objects.filter(query)
     return render(request, 'search_bar.html', {'form': form, 'q': q, 'results' : results})
 
-
-class CreatePost(CreateView):
-    model = Post
-    template_name = 'create_post.html'
-    fields = '__all__'

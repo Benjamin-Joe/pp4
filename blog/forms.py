@@ -1,5 +1,20 @@
 from django import forms
-from .models import Comment
+from .models import Comment, Post
+
+
+class PostForm(forms.ModelForm):
+    "Form for creating blog posts"
+    class Meta:
+        model = Post
+        fields = ('title', 'slug', 'author', 'category', 'content', 'post_image', 'status')
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'slug': forms.TextInput(attrs={'class': 'form-control'}),
+            'author': forms.Select(attrs={'class': 'form-control'}),
+            'category': forms.Select(attrs={'class': 'form-control'}),
+            'content': forms.Textarea(attrs={'class': 'form-control'}),
+            'status': forms.Select(attrs={'class': 'form-control'}),
+        }
 
 
 class SearchForm(forms.Form):
