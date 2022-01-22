@@ -1,9 +1,14 @@
 "Main views.py file"
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
-from .models import Post, Comment, Category
 from django.db.models import Q
+from .models import Post, Category
 from .forms import CommentForm, SearchForm, PostForm
+
+
+def NewsPage(request):
+    "View for news webpage"
+    return render(request, 'news.html')
 
 
 def homepage(request):
