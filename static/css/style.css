@@ -150,8 +150,9 @@ h6 {
 .news-div {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     text-align: center;
-    background-color: rgba(201, 209, 202, 0.9)}
+    background-color: rgba(201, 209, 202, 0.9)
 }
+
 
 @media only screen and (max-width: 992px) {
     .game-img-1{

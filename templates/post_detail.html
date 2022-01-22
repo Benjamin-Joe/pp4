@@ -2,10 +2,11 @@
 <title>Falloutinator | {% block title %}{{ post.title }}{% endblock %}</title>
 
 {% block content %}
-
 <a href="/">
 <h2 class="btn btn-primary">Back</h2>
 </a>
+{{ post.author.id }}
+{{ user.id }}
 {{ post.content }}
 
 <div class="col-md-12">
@@ -24,9 +25,12 @@
         {{ comment_form.as_p }}
         <button type="submit" class="btn btn-primary btn-block">Post Comment</button>
     </form>
+    {% if user.is_authenticated %}
+    {% if user.id == post.author.id %}
+
     <p><a class="btn btn-primary view-btn" href="{% url 'BLOG:EditPost' post.slug %}" role="button">Edit Post</a></p>
     <p><a class="btn btn-primary view-btn" href="{% url 'BLOG:DeletePost' post.slug %}" role="button">Delete Post</a></p>
-
+    {% endif %}
+    {% endif %}
 </div>
-
 {% endblock %}

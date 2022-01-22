@@ -2,12 +2,22 @@
 <title>Falloutinator | {% block title %}Edit Blog Post{% endblock %}</title>
 
 {% block content %}
+{% if user.id == post.author.id %}
+
 <div class="form-group">
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <button>Update</button>
     </form>
+    <a href="/">
+        <h2 class="btn btn-primary">Back</h2>
+        </a>
 </div>
-
+{% else %}
+<h1>You Can't Edit Other's Posts. Naughty Naughty!!</h1>
+<a href="/">
+    <h2 class="btn btn-primary">Back</h2>
+    </a>
+{% endif %}
 {% endblock %}
