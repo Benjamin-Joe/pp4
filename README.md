@@ -37,6 +37,8 @@ In order to complete this website. Several installations were needed, they are a
 [Cloudinary-Storage-Django](https://pypi.org/project/django-cloudinary-storage/)  
 [Django-Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)  
 
+Coverage
+
 
 <a name="deployment"></a>
 # Deployment
