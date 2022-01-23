@@ -2,6 +2,7 @@
 <title>Falloutinator | {% block title %}Create Blog Post{% endblock %}</title>
 
 {% block content %}
+{% if user.is_authenticated %}
 <div class="form-group">
     <form method="POST">
         {% csrf_token %}
@@ -10,4 +11,17 @@
     </form>
 </div>
 
+<script>
+    var username = "{{ user.id }}";
+    document.getElementById("user1").value = username;
+</script>
+
+{% else %}
+<h1>
+You Must Sign Up To Create A Post
+</h1>
+<a href="{% url 'BLOG:homepage' %}">
+    <h2 class="btn btn-primary">Back</h2>
+    </a>
+{% endif %}
 {% endblock %}
