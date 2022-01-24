@@ -8,6 +8,10 @@
 {{ post.author.id }}
 {{ user.id }}
 {{ post.content }}
+<form action="{% url 'BLOG:like_post' post.pk %}" method="POST">
+    {% csrf_token %}
+    <button type="submit" name="post_id" value="{{ post.id }}">Like</button> - {{ like_number }}
+</form>
 
 <div class="col-md-12">
     {% with comments.count as total_comments %}

@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.homepage, name='homepage'),
     path('search/', views.search, name='search'),
     path('news/', views.NewsPage, name='NewsPage'),
+    path('like/<int:pk>', views.LikeView, name='like_post'),
     path('create/', views.CreatePost.as_view(), name='CreatePost'),
     path('<slug:post>/', views.post_detail, name='post_detail'),
     path('update/<slug>/', views.EditPost.as_view(), name='EditPost'),
