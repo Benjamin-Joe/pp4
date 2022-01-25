@@ -20,7 +20,7 @@
                   {% endif %}
 
                   <h2>{{ post.title|title }}</h2>
-                  <p class="index-content">{{ post.content|slice:150 }}...</p>
+                  <p class="index-content">{{ post.content|striptags|slice:25}}...</p>
                   <p><small class="index-info">Written By: {{ post.author }} <br>
                   {{ post.created_on }} <br> {{ post.category }}</small></p>
                   <p><a class="btn btn-secondary" href="{{ post.get_absolute_url }}" role="button">View Post</a></p>
