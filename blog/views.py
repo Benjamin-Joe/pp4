@@ -3,13 +3,14 @@ from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.db.models import Q
 from django.http import HttpResponseRedirect
+from django.urls import reverse
 from .models import Post, Category
 from .forms import CommentForm, SearchForm, PostForm
 
-def LikeView(request, pk):
+def LikeView(request, slug):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
     post.likes.add(request.user)
-    return HttpResponseRedirect('/' + post.slug)
+    return HttpResponseRedirect('/' + post.slug,)
 
 def NewsPage(request):
     "View for news webpage"
