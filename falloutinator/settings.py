@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'cloudinary',
     'blog',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
