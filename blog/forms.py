@@ -30,7 +30,7 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ('name', 'email', 'content')
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'col-10'}),
-            'email': forms.TextInput(attrs={'class': 'col-10'}),
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control'}),
         },

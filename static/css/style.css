@@ -166,8 +166,10 @@ h6 {
     padding: 8px;
 }
 
-.detail-content{
+.post-container{
     text-align: center;
+    word-wrap: break-word;
+    white-space:pre-wrap;
 }
 
 .detail-img {
@@ -207,4 +209,56 @@ h6 {
     margin-top: 6px;
     margin-right: 19px;
 
+}
+
+.detail-btn-2{
+    width: 100%;
+    text-align: center;
+    margin-top: 16px;
+    margin-right: 19px;
+}
+
+.like-btn{
+    text-align: center;
+}
+
+/* Comment section style -------------*/
+
+.comment-container{
+    background-color: rgba(201, 209, 202, 0.9);
+    border: 4px solid rgb(118, 118, 216, 0.8);
+}
+
+.comment-title{
+    margin-top: 9px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.no-comment{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.add-comment{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.comment-table{
+    margin: auto;
+}
+
+.comment-name{
+    text-align: center;
+}
+
+.comment-content{
+    text-align: center;
+    word-wrap: break-word;
+    white-space:pre-wrap;
+}
+
+.comment-div{
+    border: 2px solid rgb(118, 118, 216, 0.8);
 }
