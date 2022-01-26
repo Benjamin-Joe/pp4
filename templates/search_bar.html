@@ -3,13 +3,13 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container search-container">
     <div class="row">
         {% if q %}
         <h3 class="search-count">Blog Posts Containing "{{ q }}"</h3>
         {% with results.count as total_results %}
         <h4 class="result-count">
-            We Found {{ total_results }} Object(s)
+            We Found {{ total_results }} Object{{ total_results|pluralize }}
         </h4>
         {% endwith %}
             {% for post in results %}
@@ -27,8 +27,10 @@
                   <p><a class="btn btn-primary view-btn" href="{{ post.get_absolute_url }}" role="button">View Post</a></p>
                 </div>
                 {% empty %}
-                
-                <h2>No Matching Posts</h2>
+                <h4 class="no-matches-search">No Matching Posts</h4>
+
             {% endfor %}
-{% endif %}
+    {% endif %}
+    </div>
+</div>
 {% endblock %}
