@@ -3,7 +3,7 @@
 <title>Falloutinator | {% block title %}{{ categorylist.cat}}{% endblock %}</title>
 
 {% block content %}
-<h1 class="text-center">
+<h1 class="text-center cat-title">
     Category: 
     {{ categorylist.cat }}
 </h1>
@@ -23,7 +23,7 @@
                   <p class="index-content">{{ post.content|striptags|slice:25}}...</p>
                   <p><small class="index-info">Written By: {{ post.author }} <br>
                   {{ post.created_on }} <br> {{ post.category }}</small></p>
-                  <p><a class="btn btn-secondary" href="{{ post.get_absolute_url }}" role="button">View Post</a></p>
+                  <p><a class="btn btn-primary cat-btn" href="{{ post.get_absolute_url }}" role="button">View Post</a></p>
                 </div>
             {% empty %}
             <h3 class="no-category">No Posts Under This Category Yet!</h3>
