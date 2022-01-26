@@ -11,7 +11,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
-/* Font stylings */
+/* Font styling -------------------*/
 
 h1,
 h2,
@@ -43,12 +43,6 @@ h6 {
     margin-left: 3px;
 }
 
-.search-bar-btn {
-    font-weight: bold;
-    color: white;
-    background-color: rgb(146, 166, 194);
-    border: 1px solid black;
-}
 
 /* Footer bar ------------------ */
 
@@ -99,7 +93,7 @@ h6 {
 }
 
 
-/*Category stylings*/
+/*Category styling -------------*/
 
 .category-home {
     width: 100%;
@@ -115,7 +109,7 @@ h6 {
     padding-top: 25px;
 }
 
-/* Search_bar.html Stylings */
+/* Search_bar.html styling --------------*/
 
 .search-count {
     width: 100%;
@@ -127,7 +121,7 @@ h6 {
     width: 100%;
 }
 
-/* News stylings*/
+/* News styling -------------------*/
 .game-img{
     height: 120px;
     width: 100px;
@@ -162,3 +156,55 @@ h6 {
         display: none;
     }
   }
+
+
+/* Post_Detail.html styling ----------------- */
+
+.detail-card{
+    background-color: rgba(201, 209, 202, 0.9);
+    border: 4px solid rgb(118, 118, 216, 0.8);
+    padding: 8px;
+}
+
+.detail-content{
+    text-align: center;
+}
+
+.detail-img {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.detail-title{
+    margin-top: 5px;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.detail-author{
+    display: block;
+    text-align: center;
+}
+
+.detail-category{
+    display: block;
+    text-align: center;
+}
+
+.detail-creted-on{
+    display: block;
+    text-align: center;
+}
+
+.detail-btn{
+    width: 100%;
+    text-align: center;
+    margin-top: 6px;
+    margin-right: 19px;
+
+}
