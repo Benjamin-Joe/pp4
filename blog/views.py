@@ -7,6 +7,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 from .models import Post, Category
 from .forms import CommentForm, SearchForm, PostForm
+from django.core.paginator import Paginator
 
 
 
@@ -23,8 +24,12 @@ def NewsPage(request):
 def homepage(request):
     "View for the homepage"
     posts = Post.postmanager.all()
-    return render(request, 'index.html', {'posts': posts})
 
+    pages = Paginator(Post.postmanager.all(), 6)
+    page = request.GET.get('page')
+    postpage = pages.get_page(page)
+
+    return render(request, 'index.html', {'posts': posts, 'postpage': postpage})
 
 def post_detail(request, post):
     "View for individual blog posts"
@@ -84,7 +89,6 @@ def categorydropdown(request):
         'categorydropdown': categorydropdown,
     }
     return context
-
 
 def search(request):
     "View for searching for posts"

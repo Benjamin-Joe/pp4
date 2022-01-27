@@ -4,7 +4,7 @@
 {% block content %}
         <div class="container">
             <div class="row">
-                    {% for post in posts %}
+                    {% for post in postpage %}
                         <div class="col-lg-4 index-card">
                           {% if "placeholder" in post.post_image.url %}
                           <img class="rounded-circle index-img" src="https://res.cloudinary.com/benaldo66/image/upload/v1642635685/placeholder_lpvbw2.jpg" alt="Lazer background image with walls" width="140" height="140">
@@ -16,16 +16,25 @@
                           <p class="index-content">{{ post.content|striptags|slice:25}}...</p>
                           <p><small class="index-info">Written By: {{ post.author }} <br>
                           {{ post.created_on }} <br> {{ post.category }}</small></p>
-                          <p><a class="btn btn-primary view-btn" href="{{ post.get_absolute_url }}" role="button">View Post</a></p>
+                          <p><a class="btn btn-primary view-btn" href="{% url 'BLOG:post_detail' post.slug %}" role="button">View Post</a></p>
                           {% if user.id == post.author.id %}
                           <p><a class="btn btn-primary view-btn" href="{% url 'BLOG:EditPost' post.slug %}" role="button">Edit Post</a></p>
                           <p><a class="btn btn-primary view-btn" href="{% url 'BLOG:DeletePost' post.slug %}" role="button">Delete Post</a></p>
                           {% endif %}
                         </div>
-
                     {% endfor %}
-                </div><!-- /.row -->
+                </div>
         </div>
 
-  
+        {% if postpage.has_previous %}
+        <a href="?page=1">&laquo  First</a>
+        <a href="?page={{ postpage.previous_page_number }}">Previous</a>
+
+        {% endif %}
+        Page {{ postpage.number }} of {{ postpage.paginator.num_pages }}
+
+        {% if postpage.has_next %}
+        <a href="?page={{ postpage.next_page_number }}">Next</a>
+        <a href="?page={{ postpage.paginator.num_pages }}">Last &raquo</a>
+        {% endif %}
 {% endblock %}
