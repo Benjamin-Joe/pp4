@@ -26,15 +26,19 @@
                 </div>
         </div>
 
+        <hr>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
         {% if postpage.has_previous %}
-        <a href="?page=1">&laquo  First</a>
-        <a href="?page={{ postpage.previous_page_number }}">Previous</a>
-
+        <li class="page-item"><a class="page-link" href="?page=1">&laquo  First</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ postpage.previous_page_number }}">Previous</a></li>
         {% endif %}
-        Page {{ postpage.number }} of {{ postpage.paginator.num_pages }}
-
+        <li class="page-item disabled"><a href="#" class="page-link page-no">
+        Page {{ postpage.number }} of {{ postpage.paginator.num_pages }}</a></li>
         {% if postpage.has_next %}
-        <a href="?page={{ postpage.next_page_number }}">Next</a>
-        <a href="?page={{ postpage.paginator.num_pages }}">Last &raquo</a>
+        <li class="page-item"><a class="page-link" href="?page={{ postpage.next_page_number }}">Next</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ postpage.paginator.num_pages }}">Last &raquo</a></li>
         {% endif %}
+      </ul>
+    </nav>
 {% endblock %}

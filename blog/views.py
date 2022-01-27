@@ -3,7 +3,6 @@ from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.db.models import Q
 from django.contrib.auth.forms import UserChangeForm
-from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 from .models import Post, Category
 from .forms import CommentForm, SearchForm, PostForm
