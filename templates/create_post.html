@@ -3,13 +3,16 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<div class="form-group">
+<div class="create-container col-md-12">
+
+<div class="form-group create-form">
     <form method="POST">
         {% csrf_token %}
         {{ form.media }}
         {{ form.as_p }}
-        <button>Post</button>
+        <button class="btn btn-primary post-btn" >Post</button>
     </form>
+</div>
 </div>
 
 <script>

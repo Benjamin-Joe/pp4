@@ -19,7 +19,6 @@ def NewsPage(request):
     "View for news webpage"
     return render(request, 'news.html')
 
-
 def homepage(request):
     "View for the homepage"
     posts = Post.postmanager.all()
