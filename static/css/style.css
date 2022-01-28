@@ -310,45 +310,9 @@ h6 {
 
 /* Allauth Styling ------------------------------ */
 
-/* Login ----------------------------------- */
-
-.login {
-    text-align: center;
-}
-
-.login-container {
-    margin: auto;
-    text-align: center;
-    background-color: rgba(201, 209, 202, 0.9);
-    border: 4px solid rgb(118, 118, 216, 0.8);
-    width: 45%;
-    font-weight: bold;
-}
-
-.login-form {
-    margin: auto;
-}
-
-#id_login {
-    overflow: visible;
-    text-align: center;
-    margin: auto;
-    display: flex;
-} 
-
-#id_password {
-    overflow: visible;
-    text-align: center;
-    margin: auto;
-    display: flex;
-}
-
-.primaryAction {
-    margin: 15px;
-}
-
-/* Logout Styling */
-
+.reset-container,
+.login-container,
+.signup-container,
 .logout-container {
     margin: auto;
     font-weight: bold;
@@ -358,10 +322,34 @@ h6 {
     border: 4px solid rgb(118, 118, 216, 0.8);
 }
 
+#id_username,
+#id_email,
+#id_email2,
+#id_password1,
+#id_password,
+#id_password2,
+#id_login {
+    overflow: visible;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    width: 80%;
+} 
+
+.login-container {
+    width: 45%;
+}
+
+.signup-btn,
+.primaryAction {
+    margin: 15px;
+}
+
+/* Logout Styling */
+
 .logout-vault-img {
     width: 40%;
     margin: auto;
     display: grid;
     margin-top: 5px;
-
 }

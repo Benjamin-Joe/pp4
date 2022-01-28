@@ -1,11 +1,7 @@
 {% extends "account/base.html" %}
-
 {% load i18n %}
-
 <title>Falloutinator | {% block title %}Logout {% endblock %}</title>
-
 {% block content %}
-
 <div class="logout-container">
   <h1>{% trans "Sign Out" %}</h1>
   <p>{% trans 'Are you sure you want to sign out?' %}</p>
@@ -19,5 +15,4 @@
   </form>
 </div>
 <img class="logout-vault-img" src="https://res.cloudinary.com/benaldo66/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1643399623/vault-boy-wood_l7ofg4.png" alt="Vault boy on wood background">
-
 {% endblock %}

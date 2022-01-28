@@ -2,9 +2,10 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Account" %}{% endblock %}
+<title>Falloutinator | {% block title %}Account Email{% endblock %}</title>
 
 {% block content %}
+<div class="reset-container">
     <h1>{% trans "E-mail Addresses" %}</h1>
 {% if user.emailaddress_set.all %}
 <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
@@ -52,7 +53,7 @@
         {{ form.as_p }}
         <button name="action_add" type="submit">{% trans "Add E-mail" %}</button>
     </form>
-
+</div>
 {% endblock %}
 
 
