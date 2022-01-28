@@ -14,7 +14,7 @@ class PostForm(forms.ModelForm):
             'author': forms.TextInput(attrs={'class': 'form-control', 'type': 'hidden', 'value': '', 'id': 'user1'}),
             'category': forms.Select(attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control'}),
-            'status': forms.Select(attrs={'class': 'form-control'}),
+            'status': forms.TextInput(attrs={'class': 'form-control', 'type': 'hidden'}),
         }
 
 

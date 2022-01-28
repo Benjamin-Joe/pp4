@@ -38,7 +38,7 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     content = RichTextField(blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
     post_image = CloudinaryField('image', default='placeholder')
     likes = models.ManyToManyField(User, related_name='user_likes', blank=True)
     objects = models.Manager()
