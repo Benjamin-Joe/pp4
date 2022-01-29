@@ -1,6 +1,7 @@
 "Models page for blog"
 from django.db import models
 from django.urls import reverse
+from django.utils.text import slugify
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from ckeditor.fields import RichTextField
