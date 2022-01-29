@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserChangeForm
 from django.core.paginator import Paginator
 
 from .models import Post, Category
-from .forms import CommentForm, SearchForm, PostForm
+from .forms import CommentForm, SearchForm, PostForm, EditForm
 
 
 class UserProfile(CreateView):
@@ -92,9 +92,8 @@ class DeletePost(DeleteView):
 class EditPost(UpdateView):
     "Class for updating blog posts"
     model = Post
+    form_class = EditForm
     template_name = 'edit_post.html'
-    fields = ['title', 'category', 'content']
-
 
 def categorydropdown(request):
     "Function to call all categories"

@@ -4,7 +4,7 @@
 {% block content %}
 {% if user.is_authenticated %}
 <div class="create-container col-md-12">
-
+    <h1 class="create-title">Create A Post...</h1>
 <div class="form-group create-form">
     <form method="POST">
         {% csrf_token %}

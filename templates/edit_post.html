@@ -2,23 +2,21 @@
 <title>Falloutinator | {% block title %}Edit Blog Post{% endblock %}</title>
 
 {% block content %}
-{% if user.id == post.author.id %}
-
-<div class="form-group">
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.media }}
-        {{ form.as_p }}
-        <button class="btn btn-primary">Update</button>
-    </form>
-    <a href="/">
-        <h2 class="btn btn-primary">Back</h2>
-        </a>
+<div class="edit-container">
+    {% if user.id == post.author.id %}
+    <h1 class="edit-title">Edit Post...</h1>
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form.as_p }}
+            <button class="btn btn-primary">Update</button>
+        </form>
+        <a href="{% url 'BLOG:homepage' %}"><h2 class="btn btn-primary mt-4">Back To Homepage</h2></a>
+    </div>
+    {% else %}
+    <h1>You Can't Edit Other's Posts. Naughty Naughty!!</h1>
+    <a href="{% url 'BLOG:homepage' %}"><h2 class="btn btn-primary mt-4">Back To Homepage</h2></a>
+    {% endif %}
 </div>
-{% else %}
-<h1>You Can't Edit Other's Posts. Naughty Naughty!!</h1>
-<a href="/">
-    <h2 class="btn btn-primary">Back</h2>
-    </a>
-{% endif %}
 {% endblock %}

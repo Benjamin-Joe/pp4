@@ -3,6 +3,19 @@ from django import forms
 from .models import Comment, Post
 
 
+class EditForm(forms.ModelForm):
+    "Form for updating user posts"
+    class Meta:
+        "Meta class for EditForm"
+        model = Post
+        fields = ('title', 'category', 'content')
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'category': forms.Select(attrs={'class': 'form-control'}),
+            'content': forms.Textarea(attrs={'class': 'form-control'}),
+        }
+
+
 class PostForm(forms.ModelForm):
     "Form for creating blog posts"
     class Meta:

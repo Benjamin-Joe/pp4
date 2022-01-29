@@ -311,6 +311,11 @@ h6 {
 
 /* Create Post Styling ------------------- */
 
+.create-title {
+    font-weight: bold;
+    text-align: center;
+}
+
 .create-container {
     background-color: rgba(201, 209, 202, 0.9);
     border: 4px solid rgb(118, 118, 216, 0.8);
@@ -318,6 +323,31 @@ h6 {
 
 .post-btn {
     width: 100%;
+}
+.create-form {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+/* Edit Post Styling -----------------------------*/
+
+.edit-title {
+    font-weight: bold;
+}
+
+.edit-container {
+    background-color: rgba(201, 209, 202, 0.9);
+    border: 4px solid rgb(118, 118, 216, 0.8);
+    margin: auto;
+    text-align: center;
+    align-items: center;
+}
+
+.django-ckeditor-widget {
+    width: 80%;
+    overflow-x: scroll;
 }
 
 /* Allauth Styling ------------------------------ */
