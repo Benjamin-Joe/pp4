@@ -36,7 +36,7 @@
               </a>
               <div class="dropdown-menu">
                 {% for categories in categorydropdown %}
-                <a href="/category/{{ categories.name }}" class="dropdown-item">
+                <a href="/category/{{ categories.name|slugify }}" class="dropdown-item">
                   {{ categories.name }}
                 </a>
                 {% endfor %}
