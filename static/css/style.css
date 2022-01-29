@@ -23,8 +23,6 @@ h6 {
     font-weight: bold;
 }
 
-
-
 /* Navigation bar ------------------ */
 
 .navbar-brand {
@@ -98,7 +96,7 @@ h6 {
 .page-item {font-weight: bold;}
 
 
-/*Category styling -------------*/
+/*Category Styling -------------*/
 
 .category-home {
     width: 100%;
@@ -113,7 +111,6 @@ h6 {
     font-weight: bold;
 }
 
-
 .no-category-image {
     width: 60%;
     margin: auto;
@@ -124,7 +121,7 @@ h6 {
     width: 80%;
 }
 
-/* Search_bar.html styling --------------*/
+/* Search Styling --------------*/
 
 .search-count {
     width: 100%;
@@ -142,7 +139,6 @@ h6 {
     margin: auto;
 }
 
-
 .search-home {
     margin: auto;
     width: 100%;
@@ -152,14 +148,12 @@ h6 {
 .search-container {
     background-color: rgba(201, 209, 202, 0.9);
     border: 4px solid rgb(118, 118, 216, 0.8);
-
 }
 
-/* News styling -------------------*/
+/* News Styling -------------------*/
 .game-img{
     height: 120px;
     width: 100px;
-
 }
 
 .game-img-1{
@@ -181,7 +175,6 @@ h6 {
     background-color: rgba(201, 209, 202, 0.9)
 }
 
-
 @media only screen and (max-width: 992px) {
     .game-img-1{
         display: none;
@@ -191,8 +184,7 @@ h6 {
     }
   }
 
-
-/* Post_Detail.html styling ----------------- */
+/* Post Detail. Styling ----------------- */
 
 .detail-card{
     background-color: rgba(201, 209, 202, 0.9);
@@ -219,7 +211,6 @@ h6 {
     margin-top: 5px;
     text-align: center;
     font-weight: bold;
-
 }
 
 .detail-author{
@@ -242,7 +233,6 @@ h6 {
     text-align: center;
     margin-top: 6px;
     margin-right: 19px;
-
 }
 
 .detail-btn-2{
@@ -272,6 +262,10 @@ h6 {
 }
 
 /* Comment section style -------------*/
+
+#comment_form {
+    display: block;
+}
 
 .comment-container{
     background-color: rgba(201, 209, 202, 0.9);
@@ -311,9 +305,11 @@ h6 {
 
 .comment-div{
     border: 2px solid rgb(118, 118, 216, 0.8);
+    width: 60%;
+    margin: auto;
 }
 
-/* Create post style ------------------- */
+/* Create Post Styling ------------------- */
 
 .create-container {
     background-color: rgba(201, 209, 202, 0.9);
@@ -361,7 +357,7 @@ h6 {
     margin: 15px;
 }
 
-/* Logout Styling */
+/* Logout Styling --------------*/
 
 .logout-vault-img {
     width: 40%;

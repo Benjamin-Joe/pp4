@@ -3,21 +3,30 @@ from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.db.models import Q
 from django.contrib.auth.forms import UserChangeForm
-from django.urls import reverse, reverse_lazy
-from .models import Post, Category
-from .forms import CommentForm, SearchForm, PostForm
 from django.core.paginator import Paginator
 
+from .models import Post, Category
+from .forms import CommentForm, SearchForm, PostForm
+
+
+class UserProfile(CreateView):
+    "View for user profile"
+    form_class = UserChangeForm
+    template_name = 'edit_profile.html'
+    success_url = ('/')
 
 
 def LikeView(request, slug):
+    "View for liking blog posts"
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
     post.likes.add(request.user)
     return HttpResponseRedirect('/' + post.slug,)
 
+
 def NewsPage(request):
     "View for news webpage"
     return render(request, 'news.html')
+
 
 def homepage(request):
     "View for the homepage"
@@ -26,8 +35,9 @@ def homepage(request):
     pages = Paginator(Post.postmanager.all(), 6)
     page = request.GET.get('page')
     postpage = pages.get_page(page)
+    context = {'posts': posts, 'postpage': postpage}
+    return render(request, 'index.html', context)
 
-    return render(request, 'index.html', {'posts': posts, 'postpage': postpage})
 
 def post_detail(request, post):
     "View for individual blog posts"
@@ -43,7 +53,13 @@ def post_detail(request, post):
             return HttpResponseRedirect('/' + post.slug)
     else:
         comment_form = CommentForm()
-    return render(request, 'post_detail.html', {'post': post, 'comments': user_comment, 'comments': comments, 'comment_form': comment_form})
+    context = {
+        'post': post,
+        'user_comments': user_comment,
+        'comments': comments,
+        'comment_form': comment_form
+    }
+    return render(request, 'post_detail.html', context)
 
 
 class CategoryView(ListView):
@@ -82,11 +98,12 @@ class EditPost(UpdateView):
 
 def categorydropdown(request):
     "Function to call all categories"
-    categorydropdown = Category.objects.all()
+    categorydropdown1 = Category.objects.all()
     context = {
-        'categorydropdown': categorydropdown,
+        'categorydropdown1': categorydropdown1,
     }
     return context
+
 
 def search(request):
     "View for searching for posts"
@@ -103,4 +120,5 @@ def search(request):
             if q is not None:
                 query &= Q(title__contains=q)
             results = Post.objects.filter(query)
-    return render(request, 'search_bar.html', {'form': form, 'q': q, 'results': results})
+    context = {'form': form, 'q': q, 'results': results}
+    return render(request, 'search_bar.html', context)

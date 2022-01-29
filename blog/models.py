@@ -1,7 +1,6 @@
 "Models page for blog"
 from django.db import models
 from django.urls import reverse
-from django.utils.text import slugify
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from ckeditor.fields import RichTextField
@@ -33,7 +32,8 @@ class Post(models.Model):
 
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='blog_posts')
     category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1)
     updated_on = models.DateTimeField(auto_now=True)
     content = RichTextField(blank=True, null=True)
@@ -63,7 +63,8 @@ class Post(models.Model):
 
 class Comment(models.Model):
     "Model for creating comments"
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=50)
     email = models.EmailField()
     created_on = models.DateTimeField(auto_now_add=True)
