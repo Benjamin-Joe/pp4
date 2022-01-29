@@ -45,7 +45,6 @@ class Post(models.Model):
     objects = models.Manager()
     postmanager = PostManager()
 
-
     def get_absolute_url(self):
         "Class to return the post_detail url based on the slug name"
         return reverse('BLOG:post_detail', args=[self.slug])
