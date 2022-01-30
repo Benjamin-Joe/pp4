@@ -14,6 +14,8 @@ Falloutinator is a website where Fallout fans can gather and share their experie
 8. [Testing ](#testing)
 9. [ Help ](#help)
 10. [ Bugs ](#bugs)
+11. [ Wireframes ](#wireframes)
+12. [ User-Stories ](#userstories)
 
 <a name="introduction"></a>
 # Introduction
@@ -36,8 +38,8 @@ In order to complete this website. Several installations were needed, they are a
 [Psycopg2](https://pypi.org/project/psycopg2/)  
 [Cloudinary-Storage-Django](https://pypi.org/project/django-cloudinary-storage/)  
 [Django-Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)  
-ck editor
-Coverage
+[ck-editor](https://ckeditor.com/)
+[Coverage](https://coverage.readthedocs.io/en/6.3/)
 
 
 <a name="deployment"></a>
@@ -72,25 +74,52 @@ Paste it into env.py file and also into the config vars setting on Heroku app
 Add cloudinary storage to settings.py  
 
 Once cloudinary was installed it was just a case of creating the media, static and templates folders and adding them to settings.py  
-Then create a Procfile and add the project name to the procfile. Then it was time for deployment.
+Then create a Procfile and add the project name to the procfile. Then it was time for deployment.  
+For my final deployment, I had to make sure I had changed the DEBUG=True to false, and also update my installed items.
 
 <a name="admin"></a>
 # Admin
+The admin section of this website allows for complete control over the website and it's users. This helps keep the website clean and free from harm. The admin section has several sections inside it:  
+Email addresses:  
+This is where all of the user's email addresses will be stored. All email accounts that are given during the sign up proccess will stay there AND NOT BE USED ANYWHERE ELSE!  
+Groups/Users:  
+These came as standard with django. The groups one remained empty and the users one contains all of the website's registered users. From here it's possible to remove accounts is users no longer with to have their account or have done something bad to have their account removed.  
+Categorys/Comments/Posts:  
+These are the additions I made to the admin section, they are written about in detail in the models section of this read me file.  
+Sites/Social Accounts:  
+I made no changes inside those as I didn't feel it was within the scope of this project. I was hoping to play around with the social accounts section but I ran out of time. I hope to edit these features in the future.  
+![Admin Section](/media/admin-view.png)
 
 <a name="models"></a>
 # Models
-This site required three models:  
-Comment - Enables users to comment on other user's posts  
-Post - Enables users to write posts and allows others to view them  
-Categories - Gives users the ability to allocate a post to a category making it easier for other users to find.  
-The Post model was created by following Django Central blog website (link in help section). I also added an image field using Cloudinary and a like field. I feel that both of these give users a better experience as they can interact and share with eachother easier.  
-The Comment model will prove very useful as it allows users to share opinions and get feedback themselves from other users. By having this feature it creates a sense of community.  
-Having a Categories section was a must for this website as it brings a lot to the table. By allowing users to create posts under a specific category it makes it easier for other users to find the posts that they are interested in.  
+The models were the center piece of the project. This is where the whole project stems from, so it was very important to get them right. Each time a change was made to anything in the models.py file it was very important to type the following two commands into the terminal:  
+```bash
+pip3 manage.py makemigrations
+```  
+```bash
+pip3 manage.py migrate
+```  
+Without these commands the models wouldn't work properly.  
+In order to complete this project I used three models. The three models are detailed below:
+Post:  
+This model came directly from Django central, although I made changes to suit my needs. This was the primary model. It gave users the ability to create their own blog posts. It also is connected to both the category model and comment model via a foreign key to allow for smooth functionality between the three models.  
+I also added a postmanager section to this model. I found this on stack overflow, and it helped as an overall control for calling this model.  
+This model also contains a likes field, giving users the ability to like/unlike blog posts (Provided they have an account!)  
+Category:  
+This allowed me to create categories that are connected to the Post model. It only had one field and that was a name field. Although it only had one field it was very useful. It was used in creating the category dropdown menu (The categories were written in the backend and displayed in the front). It also gave users the ability to select a category that suits their post content. Allowing users to find posts that they are interested in easily.  
+Comment:
+This model gave users the ability to comment on their own posts and also the posts of others too. Instead of it being linked to the user's account I built it so that all that is needed is a name and email address. This is risky as it allows for non registered users to create comments and therefor runs the risk of harmful content. But that is what the Admin section is for!  
+
 
 <a name="styles"></a>
 # Styles
-For the style of this project I followed a similar style to Facebook, I like the simple but bold styling. By keeping it consistant and simple throughout the site I believe it improves UI and allows users to focus on the content of the website without getting lost navigating their way around.  
-The color scheme overall is a blue and white theme.
+For the most part, this project was styled using bootstrap classes. Mainly the primary class. This class was applied to navigation and all buttons across the website. I feel it gives the site a warm but professional (like Facebook). Click the link for bootstrap colors detail [Bootstrap-Colors](https://getbootstrap.com/docs/5.1/utilities/colors/#how-it-works). For the background I used the same image throughout the website  
+![Backgound](/media/background-texture.png)  
+It was very simple but also looked very sleek across the pages. Plus by using the same background for all webpages it kept a level of continuity that users will find appealing.  The other big styling option I went with was with all containers. To keep things from getting lost against the background I added some colors that would be subtle but also clearly divide the background from the content  
+![Container Backgound](/media/container-background.png)  
+When all was put together I think it worked very well, below is an image of the post creation page:  
+![Create Post View](/media/create-post.png)  
+The fonts for the website were taken from google fonts. I went with Merriweather for all Titles/Headers, and for Times New Roman for everything else (You can't beat an old classic!).
 
 <a name="build"></a>
 # Build
@@ -103,14 +132,33 @@ Chrome DevTools was used constantly as it allowed me to find bugs and errors wit
 <a name="help"></a>
 # Help
 Creating this website required a lot of help and a fair amount of external websites were used to guide me on my way. Each one is pointed out below, and any code taken directly from anywhere will be acknowledged above the code itself:  
-[Django-Central](https://djangocentral.com/building-a-blog-application-with-django/)
+I would like to give a huge thank you as always to my mentor Antonio Rodriguez for going above and beyond to help me understand any issues and better myself as a junior developer!  
+[Django-Central](https://djangocentral.com/building-a-blog-application-with-django/)  
 [Freepik](www.freepik.com)  
-Placeholder photo created by user6702303
-[Tiny.png]
-Photo by Scott Webb from Pexels
+Placeholder photo created by user6702303  
+Photo by Scott Webb from Pexels  
+[Tiny.png](https://tinypng.com/)  
 
-https://wallpaperaccess.com/vault-tec#google_vignette
+
 <a name="bugs"></a>
 # Bugs
 I encountered a few issues along the way, the issues are all noted below along with how I went about fixing the issue:  
+I found a but with liking posts. It took me a few days to sort it out. But even now it's not quite right. The button is supposed to change color when pressed, but it does not. I could fix this issue by having an in depth look at the like view but I wanted to focus my attention onto larger bugs.  
+I had an issue with ckeditor, as I wasn't able to risize the text area along with the rest of the input areas on the website. To get around this issue, I added a scroll ability to allow users to have access to the full editor box without it leaving it's container.  
 There was a commit issue. Commit number 11 has the wrong message attatched to it. I did try to research how to change the commit message but I was not successful, the messages states "Delete current migrations and remigrate models due to unknown error" The message was supposed to state "Coppied allauth files into templates folder. Remigrate models due to error"  
+This one wasn't as much of a bug as it was lack of time, But towards the end of production I realised that I wasn't going to be able to add an edit profile page as intended. This was because I used Allauth for the authentication and didn't realise that it would complicate things for the profile page. So as a temporary measure I changed it so a contact page, with my email address. So user's can contact me to have changed made to their account. Once I have this project graded I will go back and add the edit profile feature.  
+
+
+<a name="wireframes"></a>
+# Wireframes
+Prior to creating this project, and along side creating this project I made good use of wireframes. They proved to be very helpful as it allowed me to stay focused on what needed to be done without getting too lost in the moment:  
+![Homepage Wireframe](/media/wire-1.png)
+![Register Wireframe](/media/wire-2.png)
+![Category/Search View Wireframe](/media/wire-3.png)
+![Commenting Wireframe](/media/wire-4.png)
+![Creating Posts Wireframe](/media/wire-5.png)
+![Post Detail Wireframe](/media/wire-6.png)
+![News Wireframe](/media/wire-7.png)
+
+<a name="userstories"></a>
+# User-stories
