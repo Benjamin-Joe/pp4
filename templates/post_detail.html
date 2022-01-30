@@ -9,7 +9,7 @@
   <h6 class="detail-category">{{ post.category }}</h6>
   <form class="like-btn" action="{% url 'BLOG:like_post' post.slug %}" method="POST">
     {% csrf_token %}
-    <h6><button type="submit" name="post_id" value="{{ post.id }}">Like</button> - {{ like_number }}</h6>
+    <h6><button class="far fa-thumbs-up" type="submit" name="post_id" value="{{ post.id }}">Like</button> - {{ like_number }}</h6>
 </form>
 
   <h6 class="detail-creted-on"><small>{{ post.created_on }}</small></h6>

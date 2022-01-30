@@ -40,7 +40,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=1)
     post_image = CloudinaryField('image', default='placeholder')
-    likes = models.ManyToManyField(User, related_name='user_likes', blank=True)
+    likes = models.ManyToManyField(User, related_name='blogpost', blank=True)
     objects = models.Manager()
     postmanager = PostManager()
 

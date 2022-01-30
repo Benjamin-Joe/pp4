@@ -95,6 +95,7 @@ class EditPost(UpdateView):
     form_class = EditForm
     template_name = 'edit_post.html'
 
+
 def categorydropdown(request):
     "Function to call all categories"
     categorydropdown1 = Category.objects.all()
