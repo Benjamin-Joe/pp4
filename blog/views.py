@@ -19,8 +19,18 @@ class UserProfile(CreateView):
 def LikeView(request, slug):
     "View for liking blog posts"
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
-    post.likes.add(request.user)
+    liked = False
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+        liked = False
+        post.save()
+    else:
+        post.likes.add(request.user)
+        liked = True
+        post.save()
     return HttpResponseRedirect('/' + post.slug,)
+
+
 
 
 def NewsPage(request):

@@ -7,10 +7,23 @@
   <h1 class="detail-title">{{ post.title|title }}</h1>
   <h6 class="detail-author">Written By: {{ post.author }}</h6>
   <h6 class="detail-category">{{ post.category }}</h6>
+  
   <form class="like-btn" action="{% url 'BLOG:like_post' post.slug %}" method="POST">
     {% csrf_token %}
-    <h6><button class="far fa-thumbs-up" type="submit" name="post_id" value="{{ post.id }}">Like</button> - {{ like_number }}</h6>
-</form>
+    {% if user.is_authenticated %}
+      {% if liked.is_true %}
+      <h6><button class="far fa-thumbs-up btn btn-danger" type="submit" name="post_id" value="{{ post.id }}">{{ post.like_number }} Like(s)</button></h6>
+      {% else %}
+      <h6><button class="far fa-thumbs-up btn btn-primary" type="submit" name="post_id" value="{{ post.id }}">{{ post.like_number }} Like(s)</button></h6>
+      {% endif %}
+    {% else %}
+    <h6 class="far fa-thumbs-up">
+    {{ post.like_number }} Like(s)
+    </h6>
+    {% endif %}
+
+  </form>
+
 
   <h6 class="detail-creted-on"><small>{{ post.created_on }}</small></h6>
   <div class="post-container">
