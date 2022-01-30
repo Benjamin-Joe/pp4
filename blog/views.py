@@ -28,9 +28,7 @@ def LikeView(request, slug):
         post.likes.add(request.user)
         liked = True
         post.save()
-    return HttpResponseRedirect('/' + post.slug,)
-
-
+    return HttpResponseRedirect('/' + post.slug, liked)
 
 
 def NewsPage(request):
@@ -41,7 +39,6 @@ def NewsPage(request):
 def homepage(request):
     "View for the homepage"
     posts = Post.postmanager.all()
-
     pages = Paginator(Post.postmanager.all(), 6)
     page = request.GET.get('page')
     postpage = pages.get_page(page)
@@ -80,7 +77,9 @@ class CategoryView(ListView):
     def get_queryset(self):
         content = {
             'cat': self.kwargs['category'],
-            'posts': Post.objects.filter(category__name=self.kwargs['category']).filter(status=1)
+            'posts': Post.objects.filter(
+                category__name=self.kwargs['category']
+                ).filter(status=1)
         }
         return content
 
