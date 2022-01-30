@@ -354,6 +354,15 @@ textarea {
     overflow-x: scroll;
 }
 
+/* Edit Profile Styling ------------------ */
+
+.contact-container {
+    margin: auto;
+    width: 80%;
+    background-color: rgba(201, 209, 202, 0.9);
+    border: 4px solid rgb(118, 118, 216, 0.8);
+}
+
 /* Allauth Styling ------------------------------ */
 
 .reset-container,

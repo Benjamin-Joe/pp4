@@ -11,7 +11,7 @@
   <form class="like-btn" action="{% url 'BLOG:like_post' post.slug %}" method="POST">
     {% csrf_token %}
     {% if user.is_authenticated %}
-      {% if liked.is_true %}
+      {% if post.liked %}
       <h6><button class="far fa-thumbs-up btn btn-danger" type="submit" name="post_id" value="{{ post.id }}">{{ post.like_number }} Like(s)</button></h6>
       {% else %}
       <h6><button class="far fa-thumbs-up btn btn-primary" type="submit" name="post_id" value="{{ post.id }}">{{ post.like_number }} Like(s)</button></h6>
@@ -20,6 +20,7 @@
     <h6 class="far fa-thumbs-up">
     {{ post.like_number }} Like(s)
     </h6>
+    <p><a href="{% url 'account_signup' %}">Sign Up For Free To Like Posts</a></p>
     {% endif %}
 
   </form>
