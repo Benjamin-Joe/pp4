@@ -37,7 +37,7 @@
         Page {{ postpage.number }} of {{ postpage.paginator.num_pages }}</a></li>
         {% if postpage.has_next %}
         <li class="page-item"><a class="page-link" href="?page={{ postpage.next_page_number }}">Next</a></li>
-        <li class="page-item"><a class="page-link" href="?page={{ postpage.paginator.num_pages }}">Last &raquo</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ postpage.paginator.num_pages }}">Last &raquo;</a></li>
         {% endif %}
       </ul>
     </nav>
