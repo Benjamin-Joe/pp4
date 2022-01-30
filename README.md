@@ -41,7 +41,6 @@ In order to complete this website. Several installations were needed, they are a
 [ck-editor](https://ckeditor.com/)
 [Coverage](https://coverage.readthedocs.io/en/6.3/)
 
-
 <a name="deployment"></a>
 # Deployment
 Early deployent was key to creating a successful website as it removed any stress of last minute deployment issues. 
@@ -109,7 +108,6 @@ Category:
 This allowed me to create categories that are connected to the Post model. It only had one field and that was a name field. Although it only had one field it was very useful. It was used in creating the category dropdown menu (The categories were written in the backend and displayed in the front). It also gave users the ability to select a category that suits their post content. Allowing users to find posts that they are interested in easily.  
 Comment:
 This model gave users the ability to comment on their own posts and also the posts of others too. Instead of it being linked to the user's account I built it so that all that is needed is a name and email address. This is risky as it allows for non registered users to create comments and therefor runs the risk of harmful content. But that is what the Admin section is for!  
-
 
 <a name="styles"></a>
 # Styles
@@ -185,6 +183,7 @@ The BlogTutorial link above was used mainly when trying to set up the like funct
 Placeholder photo created by user6702303  
 Photo by Scott Webb from Pexels  
 To my knowledge the only code that was directly copied was the initial Post model in models.py from django central. Stack overflow and Slack proved very helpful aswell, I had several helpful tips from people posting on those sites, but no code was copied directly from either stack overflow or slack.  
+As a side note, the 'Think Before I Blog' videos from Code Institute helped out a lot too.
 
 <a name="bugs"></a>
 # Bugs
